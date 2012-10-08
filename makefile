@@ -1,7 +1,7 @@
-OBJS = ~/SecondAssignment/obj/SecondProject.o
+OBJS = ../SecondAssignment/obj/SecondProject.o
 CC = gcc
-CFLAGS = -O3 -wall -c $(OBJS)
-LFLAGS = -wall $(OBJS)
+CFLAGS = -O3 -wall -c ${DEBUG}
+LFLAGS = -wall ${DEBUG}
 DEBUG = -g
 PROFILR = -pg
 ROW1 = 
@@ -9,15 +9,18 @@ COL1 =
 ROW2 = 
 COL2 =
 
-SecondProject: ${OBJS}
-	${CC} ${DEBUG} ${PROFILR} -o SecondProject ${CFLAGS} ${OBJS}
+SecondProject: SecondProject.o
+	$(CC) $(PROFILR) $(LFLAGS) ../SecondAssignment/obj/SecondProject.o -o ../SecondAssignment/etc/SecondProject
       
-SecondProject.o: ~/SecondAssignment/src/SecondProject.c 	
-	$(CC) ${DEBUG} ${PROFILR} -o SecondProject ${CFLAGS}; ~/SecondAssignment/./SecondProject ${ROW1} ${COL1} ${ROW2} ${COL2}
+SecondProject.o: ../SecondAssignment/src/SecondProject.c 	
+	$(CC) -o ../SecondAssignment/obj/SecondProject.o $(PROFILR) $(CFLAGS) ../SecondAssignment/src/SecondProject.c
 
-profile:
-	
+run: 
+	../SecondAssignment/obj/./SecondProject ${ROW1} ${COL1} ${ROW2} ${COL2}
 
-clean:
-      rm -f SecondProject ${OBJS}
-      @echo "all cleaned up!"
+#profile:
+########	
+
+#clean:
+       #rm -rf *o *~ *out *dat SecondProject
+#      @echo "all cleaned up!"
