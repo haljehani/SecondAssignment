@@ -4,7 +4,6 @@
 
 #include "SecondProject.h"
 
-
 /**************************************************************************************/
 
 int main(int argc, char * argv[])
@@ -17,6 +16,7 @@ int main(int argc, char * argv[])
 	int numRow, numCol, j, k, i;
 	int threadNum;
 	void *status;
+	int dimValid;
 	
 	TYPE **A, **B, **C;
 	
@@ -28,12 +28,13 @@ int main(int argc, char * argv[])
 	
 	//*******************************************
 	
-    
-	if(cA!=rB)
+	dimValid = checkDim (cA, rB);
+	if(dimValid != 1)
     {
         printf("\n******* Wrong input N*M and M*K *******\n");
         exit(0);
     }
+	
 	
 	//********************************************
 	
@@ -73,10 +74,22 @@ int main(int argc, char * argv[])
 	//free(B);
 	//free(C);
 	
+	
 	return (0);
 }
 //--------------------------------------------------------------
 
+
+//--------------------------------------------------------------
+// Function to check the valedity of the matrices dimintions
+int checkDim(int cA, int rB)
+{
+    if(cA!=rB)
+		return 0;
+	else 
+		return 1;
+}
+//--------------------------------------------------------------
 
 //--------------------------------------------------------------
 // Function to Allocate Memory
