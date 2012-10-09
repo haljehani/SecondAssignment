@@ -17,3 +17,4 @@ void mallocMatrix(TYPE ***A, int rA, int cA);
 void prnMatrix(TYPE **A, int rA, int cA);
 void Mulitiplication(TYPE **A, TYPE **B, TYPE **C, int rA,int rB, int cB);
 TYPE rnd_int(int i);
+int checkDim(int cA, int rB);
