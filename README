@@ -1,1 +1,15 @@
 the is the Second Assignment in Software engineering course
+
+the program goal is to calculate the time and the performance of the sequential processing of the matrix multiplication algorithm
+input: the number of the rows and the colmns for each matrix
+output: the multiplication of the two generated matrices, the time in nanosecond, and the performance
+
+
+to compile the code type    make
+
+to run the code type     make run    and the arguments
+for example 
+            make run ROW1=3 COL1=3 ROW2=3 COL2=3
+
+to test any function add it to the test source code and then run the test by typing
+           make test
