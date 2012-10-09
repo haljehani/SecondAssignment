@@ -15,3 +15,7 @@ test.o: test.c
 
 run: 
 	~/SecondAssignment/test/./test
+	
+clean:
+	rm -rf *.o *~ *.out *.dat test
+	@echo "all cleaned up!"
