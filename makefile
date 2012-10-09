@@ -27,5 +27,5 @@ clean:
 	rm -rf ./obj/*.o *~ *.out ./etc/*.dat ./etc/SecondProject* ./etc/profileInfo*
 	@echo "all cleaned up!"
 	
-test:
-	cd ~/SecondAssignment/test ; make
+test: ~/SecondAssignment/test/test.o
+	cd ~/SecondAssignment/test ; make ; make run
